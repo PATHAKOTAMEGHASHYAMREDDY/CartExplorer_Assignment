@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../services/cart.service';
-import { DiscountPipe } from '../pipes/discount.pipe';
+import { CartService } from '../services/CartService';
+import { DiscountPipe } from '../pipes/Discount.pipe';
 
 @Component({
   selector: 'app-cart-details',
   standalone: true,
   imports: [CommonModule, DiscountPipe],
-  templateUrl: './cart-details.component.html',
-  styleUrls: ['./cart-details.component.css']
+  templateUrl: './CartDetails.component.html',
+  styleUrls: ['./CartDetails.component.css']
 })
 export class CartDetailsComponent implements OnInit {
   cart: any = null;

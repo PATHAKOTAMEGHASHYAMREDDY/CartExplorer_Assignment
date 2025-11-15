@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../services/CartService';
 
 @Component({
-  selector: 'app-cart-list',
+  selector: "app-cart-list",
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.css']
+  templateUrl: "./CartList.component.html",
+  styleUrls: ["./CartList.component.css"],
 })
 export class CartListComponent implements OnInit {
   carts: any[] = [];
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.getCarts().subscribe({
@@ -21,8 +21,8 @@ export class CartListComponent implements OnInit {
         this.carts = data.carts;
       },
       error: (error) => {
-        console.error('Error fetching carts:', error);
-      }
+        console.error("Error fetching carts:", error);
+      },
     });
   }
 }
